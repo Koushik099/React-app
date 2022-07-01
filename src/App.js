@@ -51,11 +51,13 @@ function App() {
         <div style={{ height: "63px" }}>
           <Alart alart={alart} />
         </div>
-        <TextForm
-          heading="Enter the text to analyze"
-          mode={Mode}
-          showAlart={showAlart}
-        />
+        <div className="container">
+          <TextForm
+            heading="Enter the text to analyze"
+            mode={Mode}
+            showAlart={showAlart}
+          />
+        </div>
 
         <div className="container">
           <Switch>
