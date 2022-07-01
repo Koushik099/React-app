@@ -28,6 +28,7 @@ export default function TextForm(props) {
     text.select();
     // text.setSelectionRange(0, 9999); //for mobile user 😎
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges();
     props.showAlart("Text Copied 😎", "success");
   };
 
@@ -98,9 +99,21 @@ export default function TextForm(props) {
       >
         <h2>Enter text Summery</h2>
         <p>
-          {text.split(" ").length} words, {text.length} characters
+          {
+            text.split(" ").filter((ele) => {
+              return ele.length !== 0;
+            }).length
+          }{" "}
+          words, {text.length} characters
         </p>
-        <p>{0.008 * 60 * text.split(" ").length} second to read</p>
+        <p>
+          {0.008 *
+            60 *
+            text.split(" ").filter((ele) => {
+              return ele.length !== 0;
+            }).length}{" "}
+          second to read
+        </p>
         <h3>Preview</h3>
         <p>
           {text.length > 0

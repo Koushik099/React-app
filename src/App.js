@@ -48,20 +48,19 @@ function App() {
           mode={Mode}
           toggle={toggleMode}
         />
-        <Alart alart={alart} />
+        <div style={{ height: "63px" }}>
+          <Alart alart={alart} />
+        </div>
+        <TextForm
+          heading="Enter the text to analyze"
+          mode={Mode}
+          showAlart={showAlart}
+        />
 
         <div className="container">
           <Switch>
             <Route exact path="/about">
               <About />
-            </Route>
-
-            <Route exact path="/">
-              <TextForm
-                heading="Enter the text to analyze"
-                mode={Mode}
-                showAlart={showAlart}
-              />
             </Route>
           </Switch>
         </div>
